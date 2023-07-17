@@ -1,0 +1,15 @@
+body {
+    width: 360px;
+    display: block;
+    border-color: 1px solid red;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+#body box {
+    display: flex;
+    justify-content: center;
+    border-color: 1px solid red;
+    background-color: aqua;
+    padding-top: 200px;
+}
