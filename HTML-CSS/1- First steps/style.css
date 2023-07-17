@@ -1,15 +1,20 @@
 body {
-    width: 360px;
+    width: 500px;
     display: block;
     border-color: 1px solid red;
     box-sizing: border-box;
-    align-items: center;
+    margin: center
+    ;
+   
 }
 
-#body box {
-    display: flex;
+h1 {
+    border: 1px solid red;
+    text-align: center;
+}
+#box {
+    display: block;
     justify-content: center;
-    border-color: 1px solid red;
-    background-color: aqua;
-    padding-top: 200px;
+    border: 1px solid red;
+    text-align: center;
 }
