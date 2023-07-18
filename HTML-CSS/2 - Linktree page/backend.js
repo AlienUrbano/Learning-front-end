@@ -7,8 +7,7 @@ $(document).ready(function() {
 	var messageSuccess = 'Email address copied to clipboard';
 	
 	mailto.append('<span class="mailto-message"></span>');
-	$('.mailto-message').append(messageCopy);
-	
+	$('.mailto-message').append(messageCopy);	
 
 	mailto.click(function() {
 		var href = $(this).attr('href');
