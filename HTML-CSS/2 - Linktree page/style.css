@@ -1,3 +1,9 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +17,10 @@
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --highlight-color: rgba(255, 255, 255, 0.2);
+  --aura-height: 112px;
+  --aura-width: 112px;
 }
+
 
 .light {
   --text-color: black;
@@ -20,6 +29,8 @@
   --surface-color: rgba(0, 0, 0, 0.1);
   --surface-color-hover: rgba(0, 0, 0, 0.2);
   --highlight-color: rgba(0, 0, 0, 0.2);
+  --aura-height: 112px;
+  --aura-width: 112px;
 }
 body {
   background: var(--bg-url) no-repeat top center/cover;
@@ -41,7 +52,70 @@ body * {
   padding: 24px;
 }
 
-#profile img {
+.aura {
+  background: #191c29;
+  width: var(--aura-width);
+  height: var(--aura-height);
+  padding: 0px;
+  position: relative;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  margin-left: 78px;
+  margin-bottom: 18px;
+}
+
+.aura:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 2s;
+}
+.aura:hover:before, .aura:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+
+.aura::before {
+  content: "";
+  width: 101%;
+  height: 101%;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -0.5%;
+    left: -0.5%;
+    animation: spin 2.5s linear infinite;
+    transition: opacity 2.5s;
+}
+
+.aura::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--aura-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--aura-height) / 4));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 0.5;
+  transition: opacity 2.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+.aura img {
   display: block;
   width: 112px;
   margin: auto;
@@ -62,9 +136,10 @@ ul {
 }
 
 #portifolio ion-icon{
-  border-radius: 50%;
+  
   transition: 0.5s;
   font-size: 24px;
+  padding-left: 4px;
 }
 
 ul li a {
