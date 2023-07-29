@@ -39,16 +39,6 @@
   --bg-url-desktop: url(./assets/bg-desktop-light.jpg);
 }
 
-/*@media (min-width: 769px) {
-  body {
-    background: var(--bg-url-desktop) no-repeat center center/cover;
-  }
-}
-
-body {
-  background: var(--bg-url) no-repeat top center/cover;
-}
-*/
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
@@ -152,25 +142,22 @@ body * {
   transform: scale(1.01);
 }
 
-/* Nova classe para o contêiner do carrossel */
 .tech-icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto 0px auto; /* Ajuste a margem superior para posicionar abaixo dos parágrafos */
-  transform: scale(0.8); /* Ajuste o tamanho do ícone conforme necessário */
-  transition: transform 0.6s; /* Adicione uma transição suave para a escala */
+  margin: 20px auto 0px auto;
+  transform: scale(0.8);
+  transition: transform 0.6s;
   width: 150px;
   height: 50px;
   fill: var(--surface-color);
   background-size: cover;
 }
 
-/* Estilize o ícone central para ampliar */
 .tech-icons .slick-center {
-  transform: scale(1.01); /* Ajuste a escala do ícone central conforme necessário */
+  transform: scale(1.01);
 }
-
 
 ul {
   list-style: none;
